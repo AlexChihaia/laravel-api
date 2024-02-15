@@ -3,19 +3,19 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Project;
+use App\Models\Type;
 use Illuminate\Http\Request;
 
-class ProjectController extends Controller
+class TypeController extends Controller
 {
     public function index()
     {
-        $projects = Project::paginate(10);
 
+        $types = Type::paginate(10);
+    
         
         return response()->json([
-            'status'=>true,
-            'projects' => $projects,
+            'types' => $types,
         ]);
     }
 }
